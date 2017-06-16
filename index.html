@@ -1,0 +1,44 @@
+ <html>
+
+  <head>
+    <script src= "http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <button id = "getData" >getData</button>
+    <pre id = "jsonDisplay" ></pre>
+    <div id="data_line"></div>
+    <script>
+        var w = 960;
+        var h = 500;
+        var socket = io.connect();
+        var $getData = $("#getData");
+        var data1=7;
+        var val1 = {
+          'vehicle_type': 'BIKE',
+          'start_time' : 1493361900,
+          'end_time' : 1493361960,
+          's2_id' : '3302872576958660608'
+        }
+
+
+        $getData.click(function(e){
+          e.preventDefault();
+          socket.emit('Data', val1);
+        });
+        socket.on('Json', function(data){
+          data1 = data;
+          $('#jsonDisplay').text(JSON.stringify(data,null,2));
+        });
+
+
+
+          </script>
+  </body>
+
+</html>
+

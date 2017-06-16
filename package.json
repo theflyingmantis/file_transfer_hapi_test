@@ -1,0 +1,21 @@
+{
+  "name": "hapiimport",
+  "version": "1.0.0",
+  "description": "test importing",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "mocha"
+  },
+  "author": "abhinav",
+  "license": "ISC",
+  "dependencies": {
+    "glue": "^4.1.0",
+    "hapi": "^16.4.3",
+    "inert": "^4.2.0",
+    "influx": "^5.0.7",
+    "nodemon": "^1.11.0",
+    "socket.io": "^2.0.3",
+    "vision": "^4.1.1"
+  }
+}
